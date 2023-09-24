@@ -1,0 +1,901 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+#container {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+}
+
+.navigation_container {
+  background-color: rgb(6, 20, 32);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 22%;
+}
+
+.navigation_menu {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0.5em;
+  width: 85%;
+}
+.navigation_menu li {
+  width: 100%;
+  position: relative;
+}
+.navigation_menu li:first-child a {
+  margin: 4.5em auto 3.5em auto;
+  font-size: 23px;
+}
+.navigation_menu li:hover .dropdown_menu {
+  display: block;
+}
+.navigation_menu li a {
+  width: 100%;
+  padding: 1em 0.8em;
+  color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(102, 119, 153, 0.5);
+  text-decoration: none;
+  margin: 2.2em auto;
+  text-align: center;
+  font-size: 20px;
+  height: 60px;
+  transition: all 0.4s ease-out;
+  box-shadow: 0 0 0.3em 0.02em rgba(112, 129, 170, 0.7);
+}
+.navigation_menu li a:hover {
+  background-color: rgba(102, 119, 153, 0.75);
+  color: white;
+  box-shadow: 0 0 0.35em 0.03em rgba(112, 129, 170, 0.9);
+}
+.navigation_menu li .dropdown_menu {
+  list-style-type: none;
+  position: absolute;
+  display: none;
+  top: 3.5em;
+  width: 100%;
+}
+.navigation_menu li .dropdown_menu li a {
+  margin: 1em auto;
+  font-size: 18px;
+  height: 41px;
+}
+.navigation_menu li .dropdown_menu li:first-child a {
+  font-size: 18px;
+}
+.navigation_menu li .dropdown_menu li:hover {
+  margin-bottom: 1em;
+}
+.navigation_menu #tests_link:hover {
+  margin-bottom: 16em;
+}
+
+.main {
+  background-color: rgb(0, 8, 15);
+  color: white;
+  width: 78%;
+  padding: 0.5em 2em;
+}
+.main .main_header {
+  width: 80%;
+  margin: 2em auto;
+}
+.main .main_header .main_header_heading {
+  font-size: 62px;
+  text-align: center;
+  padding: 0.8em;
+  letter-spacing: 0.07em;
+}
+.main .main_word_to_learn_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main .main_word_to_learn_container #main_word_to_learn {
+  cursor: pointer;
+  width: 500px;
+  background-color: rgba(60, 110, 115, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+  margin: 2em auto;
+  padding: 2em;
+  border-radius: 2em;
+  transition: all 0.4s ease-out;
+  opacity: 0.9;
+}
+.main .main_word_to_learn_container #main_word_to_learn h2 {
+  text-align: center;
+  font-size: 50px;
+  font-weight: normal;
+  font-family: "Courier New", Courier, monospace;
+}
+.main .main_word_to_learn_container #main_word_to_learn:hover {
+  background-color: rgba(60, 110, 115, 0.8);
+  opacity: 1;
+}
+.main .main_word_to_learn_container #main_change_word {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 1em;
+  width: 18%;
+}
+.main .main_word_to_learn_container #main_change_word img {
+  margin: 0.9em;
+  padding: 0.1em;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.4s ease-out;
+}
+.main .main_word_to_learn_container #main_change_word img:hover {
+  opacity: 1;
+}
+.main .main_word_to_learn_container #main_change_word:first-child img {
+  margin-left: 0;
+}
+.main .main_word_to_learn_container #main_change_word #main_word_index {
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1430px) {
+  .navigation_menu {
+    width: 100%;
+  }
+  .navigation_menu li .dropdown_menu li a {
+    font-size: 16px;
+  }
+  .navigation_menu li .dropdown_menu li:first-child a {
+    font-size: 16px;
+  }
+  .main {
+    width: 100%;
+  }
+  .main .main_header {
+    width: 100%;
+    margin: 1em auto;
+  }
+}
+@media screen and (max-width: 1085px) {
+  .main .main_header {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .main .main_header .main_header_heading {
+    padding: 1em 0.2em;
+  }
+  .navigation_container .navigation_menu li .dropdown_menu li a {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 825px) {
+  #container {
+    flex-direction: column;
+  }
+  .navigation_container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .navigation_container .navigation_menu {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .navigation_container .navigation_menu li:first-child a {
+    margin: 1.5em auto 3.5em auto;
+    font-size: 20px;
+  }
+  .navigation_container .navigation_menu li a {
+    margin: 1.5em auto;
+  }
+  .navigation_container .navigation_menu li .dropdown_menu {
+    top: 5.5em;
+  }
+  .navigation_container .navigation_menu li .dropdown_menu li a {
+    margin: 1em auto;
+    font-size: 15px;
+  }
+  .navigation_container .navigation_menu li .dropdown_menu li:first-child a {
+    font-size: 15px;
+  }
+  .navigation_container .navigation_menu #tests_link:hover {
+    margin-bottom: 6em;
+  }
+  .main .main_word_to_learn_container #main_change_word {
+    width: 38%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .navigation_container {
+    padding: 0.6em 0.4em;
+  }
+  .navigation_menu {
+    margin: 0;
+    padding: 0;
+  }
+  .navigation_menu li:hover .dropdown_menu {
+    display: block;
+  }
+  .navigation_menu li a {
+    padding: 1em 0.6em;
+  }
+  .navigation_menu li .dropdown_menu {
+    list-style-type: none;
+    position: absolute;
+    display: none;
+    top: 3.5em;
+    width: 100%;
+  }
+  .navigation_menu li .dropdown_menu li a {
+    margin: 0.1em auto;
+    font-size: 10px;
+    height: 51px;
+    width: 120px;
+  }
+  .navigation_menu li .dropdown_menu li:first-child a {
+    font-size: 10px;
+  }
+  .navigation_menu li .dropdown_menu li:hover {
+    margin-bottom: 1em;
+  }
+  .main .main_word_to_learn_container {
+    padding: 0.4em;
+  }
+  .main .main_word_to_learn_container #main_word_to_learn {
+    width: 300px;
+    height: 300px;
+  }
+  .main .main_word_to_learn_container #main_word_to_learn h2 {
+    font-size: 39px;
+  }
+}
+#main_test_odgadnij_slowo_angielski .main_header {
+  width: 80%;
+  margin: 2em auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#main_test_odgadnij_slowo_angielski .main_header .main_header_heading {
+  font-size: 52px;
+  text-align: center;
+  padding: 0.8em;
+  letter-spacing: 0.07em;
+}
+#main_test_odgadnij_slowo_angielski .main_header span {
+  color: rgba(220, 255, 255, 0.6);
+  font-size: 45px;
+  margin: 0 0.8em;
+}
+#main_test_odgadnij_slowo_angielski .main_test_button_container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+}
+#main_test_odgadnij_slowo_angielski .main_test_button_container .main_test_buttons {
+  color: white;
+  padding: 0.6em 1.5em;
+  font-size: 18px;
+  background-color: rgba(40, 153, 145, 0.4);
+  border: none;
+  margin: 0 3%;
+  width: 200px;
+  border-radius: 0.1em;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  opacity: 0.8;
+}
+#main_test_odgadnij_slowo_angielski .main_test_button_container .main_test_buttons:hover {
+  background-color: rgba(50, 153, 140, 0.8);
+  opacity: 1;
+}
+#main_test_odgadnij_slowo_angielski .main_guess_word_test {
+  background-color: rgba(0, 250, 190, 0.006);
+  box-shadow: 0 0 0.4em 0.2em rgba(0, 250, 190, 0.007);
+  width: 70%;
+  margin: 5em auto 2em auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em;
+}
+#main_test_odgadnij_slowo_angielski .main_guess_word_test #main_display_word_to_guess {
+  font-size: 38px;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  padding: 2em;
+}
+#main_test_odgadnij_slowo_angielski .main_guess_word_test .main_guess_word_form {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+#main_test_odgadnij_slowo_angielski .main_guess_word_test .main_guess_word_form .main_guess_word_test_input, #main_test_odgadnij_slowo_angielski .main_guess_word_test .main_guess_word_form #test_odgadnj_slowo_na_angielski_submit_button {
+  margin: 1.2em;
+  background-color: rgba(79, 211, 167, 0.45);
+  border: 0;
+  box-shadow: 0.05em 0.13em 0.4em 0.05em rgba(89, 236, 187, 0.55);
+  border-radius: 0.2em;
+  color: rgba(230, 255, 250, 0.8);
+  width: 70%;
+  font-size: 18px;
+  padding: 0.8em 2em;
+}
+#main_test_odgadnij_slowo_angielski .main_guess_word_test .main_guess_word_form .main_guess_word_test_input:focus, #main_test_odgadnij_slowo_angielski .main_guess_word_test .main_guess_word_form #test_odgadnj_slowo_na_angielski_submit_button:focus {
+  border: 0;
+  outline: 0;
+}
+#main_test_odgadnij_slowo_angielski .main_guess_word_test .main_guess_word_form .main_guess_word_test_input::-moz-placeholder, #main_test_odgadnij_slowo_angielski .main_guess_word_test .main_guess_word_form #test_odgadnj_slowo_na_angielski_submit_button::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+#main_test_odgadnij_slowo_angielski .main_guess_word_test .main_guess_word_form .main_guess_word_test_input::placeholder, #main_test_odgadnij_slowo_angielski .main_guess_word_test .main_guess_word_form #test_odgadnj_slowo_na_angielski_submit_button::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+#main_test_odgadnij_slowo_angielski .main_guess_word_test .main_guess_word_form #test_odgadnj_slowo_na_angielski_submit_button {
+  padding: 0.8em 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease-out;
+  cursor: pointer;
+  box-shadow: 0 0 0.3em 0.03em rgba(89, 236, 187, 0.55);
+  width: 30%;
+}
+#main_test_odgadnij_slowo_angielski .main_guess_word_test .main_guess_word_form #test_odgadnj_slowo_na_angielski_submit_button:hover {
+  background-color: rgba(79, 211, 167, 0.65);
+  box-shadow: 0 0 0.3em 0.04em rgba(89, 236, 187, 0.75);
+  color: rgb(250, 255, 255);
+}
+#main_test_odgadnij_slowo_angielski .main_guess_word_test .main_guess_word_correct_answers {
+  font-size: 21px;
+  letter-spacing: 0.08em;
+  margin: 0.6em auto;
+}
+
+@media screen and (max-width: 1150px) {
+  #main_test_odgadnij_slowo_angielski .main_header {
+    width: 100%;
+  }
+  #main_test_odgadnij_slowo_angielski .main_test_button_container {
+    width: 100%;
+  }
+  #main_test_odgadnij_slowo_angielski .main_guess_word_test {
+    width: 85%;
+  }
+}
+@media screen and (max-width: 890px) {
+  #main_test_odgadnij_slowo_angielski .main_header {
+    width: 100%;
+  }
+  #main_test_odgadnij_slowo_angielski .main_header .main_header_heading {
+    font-size: 48px;
+    text-align: center;
+    padding: 0.6em;
+    letter-spacing: 0.06em;
+  }
+  #main_test_odgadnij_slowo_angielski .main_header span {
+    font-size: 40px;
+    margin: 0 0.5em;
+  }
+  #main_test_odgadnij_slowo_angielski .main_test_button_container {
+    width: 100%;
+    padding: 0.5em;
+  }
+  #main_test_odgadnij_slowo_angielski .main_test_button_container .main_test_buttons {
+    font-size: 17px;
+    margin: 0 3%;
+    width: 180px;
+  }
+  #main_test_odgadnij_slowo_angielski .main_guess_word_test {
+    width: 100%;
+    padding: 1em;
+  }
+  #main_test_odgadnij_slowo_angielski .main_guess_word_test #main_display_word_to_guess {
+    font-size: 38px;
+    font-weight: bold;
+    font-family: "Courier New", Courier, monospace;
+    padding: 2em;
+  }
+  #main_test_odgadnij_slowo_angielski .main_guess_word_test .main_guess_word_form {
+    display: flex;
+  }
+}
+@media screen and (max-width: 825px) {
+  #main_test_odgadnij_slowo_angielski .main_header {
+    width: 100%;
+    margin: 1em auto;
+  }
+  #main_test_odgadnij_slowo_angielski .main_test_button_container {
+    width: 100%;
+    padding: 0.755em 0.6em;
+  }
+  #main_test_odgadnij_slowo_angielski .main_guess_word_test {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 620px) {
+  #main_test_odgadnij_slowo_angielski .main_header {
+    margin: 2em auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #main_test_odgadnij_slowo_angielski .main_header .main_header_heading {
+    font-size: 46px;
+    text-align: center;
+    padding: 0.7em 0em;
+    letter-spacing: 0.02em;
+  }
+  #main_test_odgadnij_slowo_angielski .main_header span {
+    font-size: 38px;
+    margin: 0 0.2em;
+    margin-right: 0;
+  }
+  #main_test_odgadnij_slowo_angielski .main_test_button_container {
+    padding: 0.7em 0.2em;
+  }
+  #main_test_odgadnij_slowo_angielski .main_guess_word_test {
+    width: 100%;
+    margin: 3em auto 1em auto;
+    padding: 1em 0.2em;
+  }
+  #main_test_odgadnij_slowo_angielski .main_guess_word_test #main_display_word_to_guess {
+    font-size: 37px;
+    font-weight: bold;
+    font-family: "Courier New", Courier, monospace;
+    padding: 2.51em 0.2em;
+    text-align: center;
+  }
+  #main_test_odgadnij_slowo_angielski .main_guess_word_test .main_guess_word_form {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+  }
+  #main_test_odgadnij_slowo_angielski .main_guess_word_test .main_guess_word_form .main_guess_word_test_input, #main_test_odgadnij_slowo_angielski .main_guess_word_test .main_guess_word_form #test_odgadnj_slowo_na_angielski_submit_button {
+    margin: 1em;
+  }
+  #main_test_odgadnij_slowo_angielski .main_guess_word_test .main_guess_word_form #test_odgadnj_slowo_na_angielski_submit_button {
+    padding: 0.8em 2em;
+  }
+  #main_test_odgadnij_slowo_angielski .main_guess_word_test .main_guess_word_correct_answers {
+    font-size: 19px;
+  }
+}
+#main_test_wyboru .main_header {
+  width: 80%;
+  margin: 2em auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#main_test_wyboru .main_header .main_header_heading {
+  font-size: 52px;
+  text-align: center;
+  padding: 0.8em;
+  letter-spacing: 0.07em;
+}
+#main_test_wyboru .main_header span {
+  color: rgba(220, 255, 255, 0.6);
+  font-size: 45px;
+  margin: 0 0.8em;
+}
+#main_test_wyboru .main_test_button_container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+}
+#main_test_wyboru .main_test_button_container .main_test_buttons {
+  color: white;
+  padding: 0.6em 1.5em;
+  font-size: 18px;
+  background-color: rgba(40, 153, 145, 0.4);
+  border: none;
+  margin: 0 3%;
+  width: 200px;
+  border-radius: 0.1em;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  opacity: 0.8;
+}
+#main_test_wyboru .main_test_button_container .main_test_buttons:hover {
+  background-color: rgba(50, 153, 140, 0.8);
+  opacity: 1;
+}
+#main_test_wyboru .main_choose_word_test {
+  background-color: rgba(0, 250, 190, 0.006);
+  box-shadow: 0 0 0.4em 0.2em rgba(0, 250, 190, 0.007);
+  width: 70%;
+  margin: 5em auto 2em auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em;
+}
+#main_test_wyboru .main_choose_word_test #main_display_word_to_guess {
+  font-size: 38px;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  padding: 1.7em;
+}
+#main_test_wyboru .main_choose_word_test .main_guess_word_form {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+#main_test_wyboru .main_choose_word_test .main_guess_word_form .main_answer_buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+}
+#main_test_wyboru .main_choose_word_test .main_guess_word_form .main_answer_buttons .main_choose_answer_button {
+  display: flex;
+  background-color: rgba(75, 248, 153, 0.5);
+  padding: 1em 0.2em;
+  justify-content: center;
+  color: white;
+  font-size: 15px;
+  border: 0;
+  margin: 0 2.5%;
+  width: 200px;
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+  border-radius: 0.2em;
+}
+#main_test_wyboru .main_choose_word_test .main_guess_word_form .main_answer_buttons .main_choose_answer_button:hover {
+  background-color: rgba(75, 248, 153, 0.8);
+}
+#main_test_wyboru .main_choose_word_test .main_guess_word_form .main_answer_buttons .main_choose_answer_button .label_text {
+  margin: 0 0.5em;
+}
+#main_test_wyboru .main_choose_word_test .main_guess_word_form #test_wybierz_slowo_form_submit_button {
+  margin: 1.3em auto;
+  padding: 1em 3em;
+  background-color: rgba(30, 10, 80, 0.45);
+  border: 0;
+  border-radius: 0.2em;
+  font-size: 20px;
+  color: white;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+#main_test_wyboru .main_choose_word_test .main_guess_word_form #test_wybierz_slowo_form_submit_button:hover {
+  background-color: rgba(30, 10, 80, 0.75);
+}
+#main_test_wyboru .main_choose_word_test .main_guess_word_correct_answers {
+  font-size: 21px;
+  letter-spacing: 0.08em;
+  margin: 0.6em auto;
+}
+
+@media screen and (max-width: 970px) {
+  #main_test_wyboru .main_header {
+    width: 100%;
+    margin: 2em auto;
+  }
+  #main_test_wyboru .main_header .main_header_heading {
+    font-size: 45px;
+    text-align: center;
+    padding: 0.8em 0.1em;
+    letter-spacing: 0.07em;
+  }
+  #main_test_wyboru .main_header span {
+    color: rgba(220, 255, 255, 0.6);
+    font-size: 40px;
+    margin: 0 0.8em;
+  }
+  #main_test_wyboru .main_test_button_container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+  }
+  #main_test_wyboru .main_test_button_container .main_test_buttons {
+    color: white;
+    padding: 0.6em 1.5em;
+    font-size: 16px;
+  }
+  #main_test_wyboru .main_choose_word_test {
+    width: 100%;
+  }
+  #main_test_wyboru .main_choose_word_test #main_display_word_to_guess {
+    font-size: 38px;
+    padding: 1.7em;
+    text-align: center;
+  }
+  #main_test_wyboru .main_choose_word_test .main_guess_word_form {
+    display: flex;
+    width: 100%;
+  }
+  #main_test_wyboru .main_choose_word_test .main_guess_word_form .main_answer_buttons {
+    width: 100%;
+    padding: 1em;
+  }
+  #main_test_wyboru .main_choose_word_test .main_guess_word_form .main_answer_buttons .main_choose_answer_button {
+    padding: 0.7em 0.2em;
+    font-size: 13px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
+  #main_test_wyboru .main_choose_word_test .main_guess_word_correct_answers {
+    font-size: 18px;
+    letter-spacing: 0.07em;
+  }
+}
+#main_lessons .main_header {
+  margin: 0 auto;
+}
+#main_lessons .main_lessons_menu .main_lessons_menu_list {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+  list-style-type: none;
+}
+#main_lessons .main_lessons_menu .main_lessons_menu_list .main_lessons_menu_item, #main_lessons .main_lessons_menu .main_lessons_menu_list .submenu_item {
+  padding: 1em 1em;
+  background-color: rgba(0, 128, 128, 0.7);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 65px;
+  width: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 0 0.3em 0.12em rgba(95, 205, 205, 0.6);
+}
+#main_lessons .main_lessons_menu .main_lessons_menu_list .main_lessons_menu_item:hover, #main_lessons .main_lessons_menu .main_lessons_menu_list .submenu_item:hover {
+  background-color: rgb(0, 128, 128);
+  box-shadow: 0 0 0.3em 0.12em rgba(95, 205, 205, 0.9);
+}
+#main_lessons .main_lessons_menu .main_lessons_menu_list .main_lessons_menu_item .main_lessons_submenu, #main_lessons .main_lessons_menu .main_lessons_menu_list .submenu_item .main_lessons_submenu {
+  display: none;
+  position: absolute;
+  top: 3.2em;
+}
+#main_lessons .main_lessons_menu .main_lessons_menu_list .main_lessons_menu_item .main_lessons_submenu li, #main_lessons .main_lessons_menu .main_lessons_menu_list .submenu_item .main_lessons_submenu li {
+  font-size: 12px;
+  text-align: center;
+  margin: 0.8em auto;
+  color: #ddd;
+  font-family: verdana;
+  padding: 1em;
+}
+#main_lessons .main_lessons_menu .main_lessons_menu_list .main_lessons_menu_item {
+  position: relative;
+  margin: 0 2%;
+}
+#main_lessons .main_lessons_menu .main_lessons_menu_list .main_lessons_menu_item:hover .main_lessons_submenu {
+  display: block;
+}
+#main_lessons .main_lesson_container {
+  margin: 3em auto 0 auto;
+  width: 350px;
+  background-color: rgba(100, 148, 237, 0.005);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+#main_lessons .main_lesson_container .polish_word_container, #main_lessons .main_lesson_container .english_word_container {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  text-align: center;
+  padding: 2em;
+  margin-bottom: 18em;
+}
+#main_lessons .main_lesson_container .polish_word_container h2, #main_lessons .main_lesson_container .english_word_container h2 {
+  font-size: 27px;
+  font-family: cursive;
+}
+#main_lessons .main_lesson_container .english_word_container {
+  position: relative;
+  margin-bottom: 0;
+  padding: 1em 2em 0 2em;
+}
+#main_lessons .main_lesson_container .english_word_container h2 {
+  font-size: 23px;
+}
+#main_lessons .main_lesson_container .english_word_container .images_container {
+  margin: 2em auto;
+  display: flex;
+  justify-content: center;
+}
+#main_lessons .main_lesson_container .english_word_container .images_container .arrows {
+  margin: 0.4em;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+  opacity: 0.6;
+}
+#main_lessons .main_lesson_container .english_word_container .images_container .arrows:hover {
+  opacity: 1;
+}
+#main_lessons .main_lesson_container .english_word_container .images_container svg {
+  cursor: pointer;
+}
+#main_lessons .main_lesson_container .english_word_container .images_container .is_known_false {
+  opacity: 0.25;
+}
+#main_lessons .main_lesson_container .english_word_container .images_container .is_known_true {
+  opacity: 1;
+  transition: 0.3s;
+}
+#main_lessons .main_lesson_container .english_word_container .images_container .is_known_true:hover {
+  opacity: 0.4;
+}
+#main_lessons .main_lesson_container .english_word_container #english_word_curtain {
+  position: absolute;
+  background-color: rgb(96, 112, 121);
+  text-align: center;
+  line-height: 50px;
+  font-size: 18px;
+  color: #dde;
+  top: 12%;
+  width: 290px;
+  cursor: pointer;
+  height: 50px;
+}
+
+@media screen and (max-width: 600px) {
+  #main_lessons .main_lessons_menu .main_lessons_menu_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 70%;
+  }
+  #main_lessons .main_lessons_menu .main_lessons_menu_list .main_lessons_menu_item {
+    position: relative;
+    margin: 0.5em 2%;
+  }
+  #main_lessons .main_lessons_menu .main_lessons_menu_list .main_lessons_menu_item:hover .main_lessons_submenu {
+    display: block;
+  }
+  #main_lessons .main_lessons_menu .main_lessons_menu_list .main_lessons_menu_item:first-child:hover {
+    margin-bottom: 11.5em;
+  }
+  #main_lessons .main_lessons_menu .main_lessons_menu_list .main_lessons_menu_item:hover {
+    margin-bottom: 4em;
+  }
+  #main_lessons .main_lesson_container {
+    margin: 3em auto 0 auto;
+    width: 350px;
+    background-color: rgba(100, 148, 237, 0.005);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  #main_lessons .main_lesson_container .polish_word_container, #main_lessons .main_lesson_container .english_word_container {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    text-align: center;
+    padding: 2em;
+    margin-bottom: 18em;
+  }
+  #main_lessons .main_lesson_container .polish_word_container h2, #main_lessons .main_lesson_container .english_word_container h2 {
+    font-size: 27px;
+    font-family: cursive;
+  }
+}
+#main_dictionary .main_header {
+  margin: 1em auto;
+}
+#main_dictionary .main_header .main_header_heading {
+  padding-bottom: 0.2em;
+}
+#main_dictionary .slownik_main_article {
+  display: flex;
+  -moz-column-count: 3;
+       column-count: 3;
+  justify-content: center;
+  align-items: center;
+}
+#main_dictionary .slownik_main_article .words_container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  padding: 1.5em;
+}
+#main_dictionary .slownik_main_article .words_container .article_words_container {
+  width: 80%;
+  padding: 0 1em;
+  margin: auto;
+}
+#main_dictionary .slownik_main_article .dictionary_article_h2 {
+  font-size: 30px;
+  font-weight: normal;
+  font-family: cursive;
+  text-align: center;
+  padding: 1em 2em;
+}
+#main_dictionary .slownik_main_article p {
+  letter-spacing: 0.08em;
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  opacity: 0.8;
+  padding: 0.15em 0.5em;
+  cursor: default;
+}
+#main_dictionary .slownik_main_article p:hover {
+  opacity: 1;
+  background-color: rgba(100, 245, 245, 0.1);
+}
+
+@media screen and (max-width: 1700px) {
+  #main_dictionary .main_header {
+    margin: 1em auto;
+  }
+  #main_dictionary .main_header .main_header_heading {
+    padding-bottom: 0.2em;
+  }
+  #main_dictionary .slownik_main_article .dictionary_article_h2 {
+    font-size: 28px;
+  }
+  #main_dictionary .slownik_main_article p {
+    letter-spacing: 0.07em;
+    font-size: 13px;
+    padding: 0.13em 0.45em;
+  }
+}
+@media screen and (max-width: 1000px) {
+  #main_dictionary .main_header {
+    margin: 0.5em auto;
+  }
+  #main_dictionary .main_header .main_header_heading {
+    padding-bottom: 0;
+  }
+  #main_dictionary .slownik_main_article {
+    display: flex;
+    flex-direction: column;
+  }
+  #main_dictionary .slownik_main_article .words_container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1.5em;
+  }
+  #main_dictionary .slownik_main_article .words_container .article_words_container {
+    width: 80%;
+    padding: 0 1em;
+    margin: auto;
+  }
+}/*# sourceMappingURL=style.css.map */
