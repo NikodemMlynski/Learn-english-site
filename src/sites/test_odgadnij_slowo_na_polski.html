@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nauka Angielskiego</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <div id="container">
+        <nav class="navigation_container">
+            <ul class="navigation_menu">
+                <li><a href="../../index.html">Strona główna</a></li>
+                <li><a href="lekcje.html">Lekcje</a>
+                </li>
+                <li id="tests_link"><a href="#">Testy</a>
+                    <ul class="dropdown_menu">
+                        <li><a href="test_wyboru_na_angielski.html">Test wybory - na angielski</a></li>
+                        <li><a href="test_wyboru_na_polski.html">Test wyboru - na polski</a></li>
+                        <li><a href="test_odgadnij_slowo_na_angielski.html">Odgadnij słowo - na angielski</a></li>
+                        <li><a href="test_odgadnij_slowo_na_polski.html">Odgadnij słowo - na polski</a></li>
+                    </ul>
+                </li>
+                <li><a href="slownik.html">Słownik</a></li>
+                <li><a href="#">Gramatyka</a></li>
+                
+            </ul>
+        </nav>
+        <main class="main" id="main_test_odgadnij_slowo_angielski">
+            <header class="main_header">
+                <h1 class="main_header_heading">Odgadnij słowo</h1> <span>EN</span>
+            </header>
+            <article class="main_test_button_container">
+                <button data-lists="basics" class="main_test_buttons" title="NIE DZIAŁA, jeszcze nad tym pracuje">Podstawy</button>
+                <button data-lists="simple_conversations" class="main_test_buttons" title="NIE DZIAŁA, jeszcze nad tym pracuje">Proste rozmowy</button>
+                <button data-lists="family" class="main_test_buttons" title="NIE DZIAŁA, jeszcze nad tym pracuje">Rodzina</button>
+            </article>
+            <article class="main_guess_word_test">
+                <h3 id="main_display_word_to_guess">Wybierz lekcję</h3>
+                <form class="main_guess_word_form" id="test_odgadnij_slowo_angielski_form">
+                    <input type="text" name="" id="main_guess_word_test_input" class="main_guess_word_test_input" placeholder="wpisz słowo tutaj" autocomplete="off">
+                    <button type="submit" id="test_odgadnj_slowo_na_angielski_submit_button">Potwierdź</button>
+                </form>
+                <p class="main_guess_word_correct_answers">Pytanie <span id="main_guess_word_index">1</span>, prawidłowe odpowiedzi: <span id="main_guess_word_correct_answers_value">0</span>/<span id="word_list_length">10</span></p>
+            </article>
+        </main>
+    </div>
+    <script src="../js/script_odgadnij_slowo_polski.js"></script>
+</body>
+</html>
